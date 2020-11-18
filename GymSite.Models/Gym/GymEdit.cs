@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymSite.Models.Gym
 {
-    public class GymListItem
+    public class GymEdit
     {
         public int GymId { get; set; }
         public string Name { get; set; }

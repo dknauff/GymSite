@@ -17,6 +17,7 @@ namespace GymSite.Services
                 var query =
                     ctx.Gyms.Select(e => new GymListItem
                     {
+                        GymId = e.GymId,
                         Name = e.Name,
                         MembershipPrice = e.MembershipPrice,
                         Description = e.Description,
@@ -46,6 +47,43 @@ namespace GymSite.Services
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Gyms.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public GymDetail GetGymById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Gyms.Single(e => e.GymId == id);
+                return new GymDetail
+                {
+                    GymId = entity.GymId,
+                    Name = entity.Name,
+                    MembershipPrice = entity.MembershipPrice,
+                    Description = entity.Description,
+                    Address = entity.Address,
+                    Phone = entity.Phone,
+                    Website = entity.Website,
+                    Size = entity.Size
+                };
+            }
+        }
+
+        public bool UpdateGym(GymEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Gyms.Single(e => e.GymId == model.GymId);
+
+                entity.Name = model.Name;
+                entity.MembershipPrice = model.MembershipPrice;
+                entity.Description = model.Description;
+                entity.Address = model.Address;
+                entity.Phone = model.Phone;
+                entity.Website = model.Website;
+                entity.Size = model.Size;
+
                 return ctx.SaveChanges() == 1;
             }
         }

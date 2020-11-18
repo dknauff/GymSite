@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gym\GymCreate.cs" />
+    <Compile Include="Gym\GymDetail.cs" />
+    <Compile Include="Gym\GymEdit.cs" />
     <Compile Include="Gym\GymListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
