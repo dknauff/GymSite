@@ -83,8 +83,25 @@
     <Compile Include="Migrations\202011181629480_FixLayout.designer.cs">
       <DependentUpon>202011181629480_FixLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011191559326_Review.cs" />
+    <Compile Include="Migrations\202011191559326_Review.designer.cs">
+      <DependentUpon>202011191559326_Review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011191600296_Reviews.cs" />
+    <Compile Include="Migrations\202011191600296_Reviews.designer.cs">
+      <DependentUpon>202011191600296_Reviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011231603483_ReviewGymFK.cs" />
+    <Compile Include="Migrations\202011231603483_ReviewGymFK.designer.cs">
+      <DependentUpon>202011231603483_ReviewGymFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011231854290_ReviewICollection.cs" />
+    <Compile Include="Migrations\202011231854290_ReviewICollection.designer.cs">
+      <DependentUpon>202011231854290_ReviewICollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Review.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -108,6 +125,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011181629480_FixLayout.resx">
       <DependentUpon>202011181629480_FixLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011191559326_Review.resx">
+      <DependentUpon>202011191559326_Review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011191600296_Reviews.resx">
+      <DependentUpon>202011191600296_Reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011231603483_ReviewGymFK.resx">
+      <DependentUpon>202011231603483_ReviewGymFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011231854290_ReviewICollection.resx">
+      <DependentUpon>202011231854290_ReviewICollection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

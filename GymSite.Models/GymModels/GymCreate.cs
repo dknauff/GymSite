@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymSite.Models.Gym
+namespace GymSite.Models.GymModels
 {
-    public class GymDetail
+    public class GymCreate
     {
-        public int GymId { get; set; }
+        [Required]
         public string Name { get; set; }
         [Display(Name = "Membership Price")]
         public decimal MembershipPrice { get; set; }

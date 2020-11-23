@@ -1,15 +1,16 @@
-﻿using System;
+﻿using GymSite.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymSite.Models.Gym
+namespace GymSite.Models.GymModels
 {
-    public class GymCreate
+    public class GymDetail
     {
-        [Required]
+        public int GymId { get; set; }
         public string Name { get; set; }
         [Display(Name = "Membership Price")]
         public decimal MembershipPrice { get; set; }
@@ -18,5 +19,7 @@ namespace GymSite.Models.Gym
         public string Phone { get; set; }
         public string Website { get; set; }
         public string Size { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace GymSite.Data
         }
 
         public DbSet<Gym> Gyms { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,6 +45,8 @@ namespace GymSite.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            modelBuilder.Entity<Review>().HasRequired(r => r.Gym).WithMany(g => g.Reviews).HasForeignKey<int>(r => r.GymId);
         }
     }
 

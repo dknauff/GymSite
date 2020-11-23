@@ -25,5 +25,7 @@ namespace GymSite.Data
         //public bool HasClasses { get; set; }
         //[Display(Name = "Personal Training")]
         //public bool HasPersonalTraining { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using GymSite.Data;
-using GymSite.Models.Gym;
+using GymSite.Models.GymModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,7 +65,8 @@ namespace GymSite.Services
                     Address = entity.Address,
                     Phone = entity.Phone,
                     Website = entity.Website,
-                    Size = entity.Size
+                    Size = entity.Size,
+                    Reviews = entity.Reviews
                 };
             }
         }
@@ -83,6 +84,18 @@ namespace GymSite.Services
                 entity.Phone = model.Phone;
                 entity.Website = model.Website;
                 entity.Size = model.Size;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteGym(int gymId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Gyms.Single(e => e.GymId == gymId);
+
+                ctx.Gyms.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

@@ -1,16 +1,12 @@
 ﻿@model GymSite.Models.GymModels.GymDetail
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Delete";
 }
-<style>
-    h2 {
-        background-color: aqua;
-    }
-</style>
 
-<h2>Details</h2>
+<h2>Delete</h2>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>GymDetail</h4>
     <hr />
@@ -79,20 +75,14 @@
             @Html.DisplayFor(model => model.Size)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Reviews)
-        </dt>
-
-        <dd>
-            @foreach (var review in Model.Reviews)
-            {
-                @Html.DisplayFor(model => review)
-            }
-        </dd>
-
     </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.GymId  }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

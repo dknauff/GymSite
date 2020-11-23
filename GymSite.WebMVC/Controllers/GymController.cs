@@ -1,4 +1,4 @@
-﻿using GymSite.Models.Gym;
+﻿using GymSite.Models.GymModels;
 using GymSite.Services;
 using System;
 using System.Collections.Generic;
@@ -76,7 +76,7 @@ namespace GymSite.WebMVC.Controllers
 
             if (model.GymId != id)
             {
-                ModelState.AddModelError("", "Id MisMatch");
+                ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
 
@@ -90,6 +90,29 @@ namespace GymSite.WebMVC.Controllers
 
             ModelState.AddModelError("", "Gym could not be updated.");
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = new GymService();
+            var model = service.GetGymById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteGym(int id)
+        {
+            var service = new GymService();
+
+            service.DeleteGym(id);
+
+            TempData["SaveResult"] = "The gym was deleted.";
+
+            return RedirectToAction("Index");
         }
     }
 }

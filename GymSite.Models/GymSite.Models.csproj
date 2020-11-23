@@ -57,17 +57,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gym\GymCreate.cs" />
-    <Compile Include="Gym\GymDetail.cs" />
-    <Compile Include="Gym\GymEdit.cs" />
-    <Compile Include="Gym\GymListItem.cs" />
+    <Compile Include="GymModels\GymCreate.cs" />
+    <Compile Include="GymModels\GymDetail.cs" />
+    <Compile Include="GymModels\GymEdit.cs" />
+    <Compile Include="GymModels\GymListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewModels\ReviewCreate.cs" />
+    <Compile Include="ReviewModels\ReviewDetail.cs" />
+    <Compile Include="ReviewModels\ReviewEdit.cs" />
+    <Compile Include="ReviewModels\ReviewListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GymSite.Data\GymSite.Data.csproj">
+      <Project>{72E90E2A-4AC4-4078-BDE6-BE61C8158D1D}</Project>
+      <Name>GymSite.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

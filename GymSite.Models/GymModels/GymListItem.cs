@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymSite.Models.Gym
+namespace GymSite.Models.GymModels
 {
-    public class GymEdit
+    public class GymListItem
     {
         public int GymId { get; set; }
         public string Name { get; set; }
