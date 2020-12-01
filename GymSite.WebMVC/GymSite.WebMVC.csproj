@@ -367,7 +367,6 @@
     <Content Include="Views\Review\Edit.cshtml" />
     <Content Include="Views\Review\Details.cshtml" />
     <Content Include="Views\Review\Delete.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Reviews.cshtml" />
     <Content Include="Views\City\Index.cshtml" />
     <Content Include="Views\City\Create.cshtml" />
     <Content Include="Views\City\Edit.cshtml" />
@@ -381,6 +380,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
