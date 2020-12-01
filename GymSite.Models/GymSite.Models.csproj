@@ -57,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CityModels\CityCreate.cs" />
+    <Compile Include="CityModels\CityDetail.cs" />
+    <Compile Include="CityModels\CityEdit.cs" />
+    <Compile Include="CityModels\CityListItem.cs" />
     <Compile Include="GymModels\GymCreate.cs" />
     <Compile Include="GymModels\GymDetail.cs" />
     <Compile Include="GymModels\GymEdit.cs" />
@@ -66,6 +70,10 @@
     <Compile Include="ReviewModels\ReviewDetail.cs" />
     <Compile Include="ReviewModels\ReviewEdit.cs" />
     <Compile Include="ReviewModels\ReviewListItem.cs" />
+    <Compile Include="StateModels\StateCreate.cs" />
+    <Compile Include="StateModels\StateDetail.cs" />
+    <Compile Include="StateModels\StateEdit.cs" />
+    <Compile Include="StateModels\StateListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

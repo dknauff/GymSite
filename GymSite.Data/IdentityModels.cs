@@ -32,8 +32,10 @@ namespace GymSite.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<City> Cities { get; set; }
         public DbSet<Gym> Gyms { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<State> States { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

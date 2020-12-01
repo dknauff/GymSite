@@ -34,7 +34,7 @@ namespace GymSite.WebMVC.Controllers
             var service = new GymService();
             if (service.CreateGym(model))
             {
-                TempData["SaveResult"] = "Gym has been successfully added!.";
+                TempData["SaveResult"] = "Gym has been successfully added!";
                 return RedirectToAction("Index");
             }
 

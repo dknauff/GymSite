@@ -1,5 +1,11 @@
 ﻿@using Microsoft.AspNet.Identity
 
+<style>
+    #loginLink{
+        padding-left: 10px;
+    }
+</style>
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -10,7 +16,6 @@
         <li>
             @Html.ActionLink("Hello " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
-        _____
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
     }
