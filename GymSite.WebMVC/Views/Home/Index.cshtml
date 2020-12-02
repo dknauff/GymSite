@@ -1,9 +1,11 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+<style>
+    
+</style>
 <div class="jumbotron">
     <h1>GymSite</h1>
     <p class="lead">GymSite last first step you'll need to take in your journey to finding the right gym for you!</p>
-    <p><a href="https://localhost:44381/State" class="btn btn-primary btn-lg">Get Started! &raquo;</a></p>
+    <p class="btn btn-light">@Html.ActionLink("Let's go!", "Index", "State")</p>
 </div>

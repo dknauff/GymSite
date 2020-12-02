@@ -16,9 +16,11 @@ namespace GymSite.Data
         public string Description { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-        //public int CityId { get; set; }
         public string Website { get; set; }
         public string Size { get; set; }
+
+        //public int CityId { get; set; }
+
         //[Display(Name = "Multiple Locations")]
         //public bool HasMultipleLocations { get; set; }
         //[Display(Name = "Classes")]

@@ -11,5 +11,7 @@ namespace GymSite.Data
         public int StateId { get; set; }
         public string Name { get; set; }
         public string Abbreviation { get; set; }
+
+        public virtual ICollection<City> Cities { get; set; }
     }
 }

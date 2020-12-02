@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace GymSite.WebMVC.Controllers
 {
-    [Authorize]
     public class GymController : Controller
     {
         // GET: Gym

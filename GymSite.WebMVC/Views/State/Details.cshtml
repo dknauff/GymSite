@@ -6,37 +6,51 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>StateDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            @*<dt>
             @Html.DisplayNameFor(model => model.StateId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.StateId)
-        </dd>
+        </dd>*@
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.Abbreviation)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Abbreviation)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Abbreviation)
+                </dd>*@
+            </dl>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Abbreviation)
-        </dd>
+<div class="col-6">
 
-    </dl>
+    <h4>@Html.DisplayNameFor(model => model.Cities) </h4>
+
+        @foreach (var city in Model.Cities)
+        {
+            <dl class="dl-horizontal">
+                <dd>
+                    @Html.DisplayFor(model => city.Name)
+                    @Html.ActionLink("Gyms", "Index", "Gym") @* need to send to list of Gyms within a city *@
+                </dd>
+
+            </dl>
+        }
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.StateId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

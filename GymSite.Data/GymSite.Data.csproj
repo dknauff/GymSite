@@ -108,6 +108,14 @@
     <Compile Include="Migrations\202011301552539_States.designer.cs">
       <DependentUpon>202011301552539_States.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012021623583_StateCityUpdates.cs" />
+    <Compile Include="Migrations\202012021623583_StateCityUpdates.designer.cs">
+      <DependentUpon>202012021623583_StateCityUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012021624326_SCFK.cs" />
+    <Compile Include="Migrations\202012021624326_SCFK.designer.cs">
+      <DependentUpon>202012021624326_SCFK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
@@ -153,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011301552539_States.resx">
       <DependentUpon>202011301552539_States.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012021623583_StateCityUpdates.resx">
+      <DependentUpon>202012021623583_StateCityUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012021624326_SCFK.resx">
+      <DependentUpon>202012021624326_SCFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

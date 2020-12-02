@@ -49,6 +49,8 @@ namespace GymSite.Data
                 .Add(new IdentityUserRoleConfiguration());
 
             modelBuilder.Entity<Review>().HasRequired(r => r.Gym).WithMany(g => g.Reviews).HasForeignKey<int>(r => r.GymId);
+
+            modelBuilder.Entity<City>().HasRequired(c => c.State).WithMany(s => s.Cities).HasForeignKey<int?>(c => c.StateId);
         }
     }
 

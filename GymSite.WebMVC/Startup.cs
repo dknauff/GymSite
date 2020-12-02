@@ -10,5 +10,7 @@ namespace GymSite.WebMVC
         {
             ConfigureAuth(app);
         }
+
+
     }
 }
