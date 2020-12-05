@@ -1,5 +1,8 @@
-﻿using GymSite.Models.GymModels;
+﻿using GymSite.Data;
+using GymSite.Models.GymModels;
 using GymSite.Services;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +11,19 @@ using System.Web.Mvc;
 
 namespace GymSite.WebMVC.Controllers
 {
+    [Authorize]
     public class GymController : Controller
     {
         // GET: Gym
         public ActionResult Index()
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new GymService();
             var model = service.GetGyms();
 
@@ -112,6 +123,26 @@ namespace GymSite.WebMVC.Controllers
             TempData["SaveResult"] = "The gym was deleted.";
 
             return RedirectToAction("Index");
+        }
+
+        public Boolean IsAdminUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                var ctx = new ApplicationDbContext();
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(ctx));
+                var s = userManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "Admin")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

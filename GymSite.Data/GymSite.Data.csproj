@@ -60,61 +60,9 @@
     <Compile Include="City.cs" />
     <Compile Include="Gym.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202011171839542_Initial.cs" />
-    <Compile Include="Migrations\202011171839542_Initial.Designer.cs">
-      <DependentUpon>202011171839542_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011171843161_Account.cs" />
-    <Compile Include="Migrations\202011171843161_Account.Designer.cs">
-      <DependentUpon>202011171843161_Account.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011171910566_Hunter.cs" />
-    <Compile Include="Migrations\202011171910566_Hunter.Designer.cs">
-      <DependentUpon>202011171910566_Hunter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011181602261_RemoveHunter.cs" />
-    <Compile Include="Migrations\202011181602261_RemoveHunter.designer.cs">
-      <DependentUpon>202011181602261_RemoveHunter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011181618332_Name.cs" />
-    <Compile Include="Migrations\202011181618332_Name.designer.cs">
-      <DependentUpon>202011181618332_Name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011181629480_FixLayout.cs" />
-    <Compile Include="Migrations\202011181629480_FixLayout.designer.cs">
-      <DependentUpon>202011181629480_FixLayout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011191559326_Review.cs" />
-    <Compile Include="Migrations\202011191559326_Review.designer.cs">
-      <DependentUpon>202011191559326_Review.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011191600296_Reviews.cs" />
-    <Compile Include="Migrations\202011191600296_Reviews.designer.cs">
-      <DependentUpon>202011191600296_Reviews.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011231603483_ReviewGymFK.cs" />
-    <Compile Include="Migrations\202011231603483_ReviewGymFK.designer.cs">
-      <DependentUpon>202011231603483_ReviewGymFK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011231854290_ReviewICollection.cs" />
-    <Compile Include="Migrations\202011231854290_ReviewICollection.designer.cs">
-      <DependentUpon>202011231854290_ReviewICollection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011241439538_BasicCity.cs" />
-    <Compile Include="Migrations\202011241439538_BasicCity.designer.cs">
-      <DependentUpon>202011241439538_BasicCity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011301552539_States.cs" />
-    <Compile Include="Migrations\202011301552539_States.designer.cs">
-      <DependentUpon>202011301552539_States.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012021623583_StateCityUpdates.cs" />
-    <Compile Include="Migrations\202012021623583_StateCityUpdates.designer.cs">
-      <DependentUpon>202012021623583_StateCityUpdates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012021624326_SCFK.cs" />
-    <Compile Include="Migrations\202012021624326_SCFK.designer.cs">
-      <DependentUpon>202012021624326_SCFK.cs</DependentUpon>
+    <Compile Include="Migrations\202012042301243_PleaseWork.cs" />
+    <Compile Include="Migrations\202012042301243_PleaseWork.designer.cs">
+      <DependentUpon>202012042301243_PleaseWork.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,47 +74,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011171839542_Initial.resx">
-      <DependentUpon>202011171839542_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011171843161_Account.resx">
-      <DependentUpon>202011171843161_Account.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011171910566_Hunter.resx">
-      <DependentUpon>202011171910566_Hunter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011181602261_RemoveHunter.resx">
-      <DependentUpon>202011181602261_RemoveHunter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011181618332_Name.resx">
-      <DependentUpon>202011181618332_Name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011181629480_FixLayout.resx">
-      <DependentUpon>202011181629480_FixLayout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011191559326_Review.resx">
-      <DependentUpon>202011191559326_Review.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011191600296_Reviews.resx">
-      <DependentUpon>202011191600296_Reviews.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011231603483_ReviewGymFK.resx">
-      <DependentUpon>202011231603483_ReviewGymFK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011231854290_ReviewICollection.resx">
-      <DependentUpon>202011231854290_ReviewICollection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011241439538_BasicCity.resx">
-      <DependentUpon>202011241439538_BasicCity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011301552539_States.resx">
-      <DependentUpon>202011301552539_States.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012021623583_StateCityUpdates.resx">
-      <DependentUpon>202012021623583_StateCityUpdates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012021624326_SCFK.resx">
-      <DependentUpon>202012021624326_SCFK.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012042301243_PleaseWork.resx">
+      <DependentUpon>202012042301243_PleaseWork.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

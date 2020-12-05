@@ -49,7 +49,8 @@ namespace GymSite.Services
                 {
                     CityId = entity.CityId,
                     Name = entity.Name,
-                    StateId = entity.StateId
+                    StateId = entity.StateId,
+                    Gyms = entity.Gyms
                 };
             }
         }

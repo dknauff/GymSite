@@ -19,7 +19,8 @@ namespace GymSite.Data
         public string Website { get; set; }
         public string Size { get; set; }
 
-        //public int CityId { get; set; }
+        public int? CityId { get; set; }
+        internal City City { get; set; }
 
         //[Display(Name = "Multiple Locations")]
         //public bool HasMultipleLocations { get; set; }

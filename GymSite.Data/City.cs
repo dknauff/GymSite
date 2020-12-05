@@ -13,5 +13,7 @@ namespace GymSite.Data
 
         public int? StateId { get; set; }
         internal State State { get; set; }
+
+        public virtual ICollection<Gym> Gyms { get; set; }
     }
 }

@@ -1,27 +1,66 @@
-namespace GymSite.Data.Migrations
+﻿namespace GymSite.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class PleaseWork : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.City",
+                c => new
+                    {
+                        CityId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        StateId = c.Int(nullable: true),
+                    })
+                .PrimaryKey(t => t.CityId)
+                .ForeignKey("dbo.State", t => t.StateId, cascadeDelete: true)
+                .Index(t => t.StateId);
+            
             CreateTable(
                 "dbo.Gym",
                 c => new
                     {
                         GymId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                         MembershipPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Description = c.String(),
                         Address = c.String(),
+                        Phone = c.String(),
                         Website = c.String(),
                         Size = c.String(),
-                        HasMultipleLocations = c.Boolean(nullable: false),
-                        HasClasses = c.Boolean(nullable: false),
-                        HasPersonalTraining = c.Boolean(nullable: false),
+                        CityId = c.Int(nullable: true),
                     })
-                .PrimaryKey(t => t.GymId);
+                .PrimaryKey(t => t.GymId)
+                .ForeignKey("dbo.City", t => t.CityId, cascadeDelete: true)
+                .Index(t => t.CityId);
+            
+            CreateTable(
+                "dbo.Review",
+                c => new
+                    {
+                        ReviewId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        Stars = c.Int(nullable: false),
+                        Title = c.String(),
+                        Text = c.String(),
+                        GymId = c.Int(nullable: true),
+                    })
+                .PrimaryKey(t => t.ReviewId)
+                .ForeignKey("dbo.Gym", t => t.GymId, cascadeDelete: true)
+                .Index(t => t.GymId);
+            
+            CreateTable(
+                "dbo.State",
+                c => new
+                    {
+                        StateId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Abbreviation = c.String(),
+                    })
+                .PrimaryKey(t => t.StateId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -101,16 +140,25 @@ namespace GymSite.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.City", "StateId", "dbo.State");
+            DropForeignKey("dbo.Review", "GymId", "dbo.Gym");
+            DropForeignKey("dbo.Gym", "CityId", "dbo.City");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Review", new[] { "GymId" });
+            DropIndex("dbo.Gym", new[] { "CityId" });
+            DropIndex("dbo.City", new[] { "StateId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.State");
+            DropTable("dbo.Review");
             DropTable("dbo.Gym");
+            DropTable("dbo.City");
         }
     }
 }

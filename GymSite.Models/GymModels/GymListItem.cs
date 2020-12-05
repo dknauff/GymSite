@@ -18,5 +18,7 @@ namespace GymSite.Models.GymModels
         public string Phone { get; set; }
         public string Website { get; set; }
         public string Size { get; set; }
+
+        public int? CityId { get; set; }
     }
 }

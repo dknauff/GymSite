@@ -20,6 +20,8 @@ namespace GymSite.Models.GymModels
         public string Website { get; set; }
         public string Size { get; set; }
 
+        public int? CityId { get; set; }
+
         public virtual ICollection<Review> Reviews { get; set; }
     }
 }

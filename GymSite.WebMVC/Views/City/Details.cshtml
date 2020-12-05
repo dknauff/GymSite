@@ -6,37 +6,55 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>CityDetail</h4>
-    <hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CityId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CityId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StateId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StateId)
+                </dd>
+            </dl>
+        </div>
+
+    <div class="col-6">
+
+        <h4>@Html.DisplayNameFor(model => model.Gyms)</h4>
+
+        @foreach (var gym in Model.Gyms)
+        {
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CityId)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CityId)
+            @Html.DisplayFor(model => gym.Name)
+            @Html.ActionLink("Gym Info", "Details", "Gym", new { id = gym.GymId }, null )
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StateId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StateId)
-        </dd>
-
     </dl>
-</div>
+        }
+        </div>
+        </div>
+    </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.CityId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

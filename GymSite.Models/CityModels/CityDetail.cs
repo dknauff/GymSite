@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymSite.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,7 @@ namespace GymSite.Models.CityModels
         public string Name { get; set; }
 
         public int? StateId { get; set; }
+
+        public virtual ICollection<Gym> Gyms { get; set; }
     }
 }

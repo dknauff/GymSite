@@ -44,12 +44,15 @@
             <dl class="dl-horizontal">
                 <dd>
                     @Html.DisplayFor(model => city.Name)
-                    @Html.ActionLink("Gyms", "Index", "Gym") @* need to send to list of Gyms within a city *@
+                    @Html.ActionLink("Gyms", "Index", "City") @*link to right place, gym by city*@
+                    
                 </dd>
 
             </dl>
         }
 </div>
+        </div>
+    </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new {  id = Model.StateId }) |
     @Html.ActionLink("Back to List", "Index")
