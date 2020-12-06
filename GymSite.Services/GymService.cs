@@ -19,12 +19,18 @@ namespace GymSite.Services
                     {
                         GymId = e.GymId,
                         Name = e.Name,
-                        MembershipPrice = e.MembershipPrice,
+                        MonthlyCost = e.MonthlyCost,
                         Description = e.Description,
+                        Hours = e.Hours,
                         Address = e.Address,
                         Phone = e.Phone,
                         Website = e.Website,
                         Size = e.Size,
+                        Equiptment = e.Equiptment,
+                        LockerRoom = e.LockerRoom,
+                        Classes = e.Classes,
+                        PersonalTraining = e.PersonalTraining,
+                        AdditionalInfo = e.AdditionalInfo,
                         CityId = e.CityId
                     });
 
@@ -37,12 +43,18 @@ namespace GymSite.Services
             var entity = new Gym()
             {
                 Name = model.Name,
-                MembershipPrice = model.MembershipPrice,
+                MonthlyCost = model.MonthlyCost,
+                Hours = model.Hours,
                 Description = model.Description,
                 Address = model.Address,
                 Phone = model.Phone,
                 Website = model.Website,
                 Size = model.Size,
+                Equiptment = model.Equiptment,
+                LockerRoom = model.LockerRoom,
+                Classes = model.Classes,
+                PersonalTraining = model.PersonalTraining,
+                AdditionalInfo = model.AdditionalInfo,
                 CityId = model.CityId
             };
 
@@ -62,12 +74,18 @@ namespace GymSite.Services
                 {
                     GymId = entity.GymId,
                     Name = entity.Name,
-                    MembershipPrice = entity.MembershipPrice,
+                    MonthlyCost = entity.MonthlyCost,
+                    Hours = entity.Hours,
                     Description = entity.Description,
                     Address = entity.Address,
                     Phone = entity.Phone,
                     Website = entity.Website,
                     Size = entity.Size,
+                    Equiptment = entity.Equiptment,
+                    LockerRoom = entity.LockerRoom,
+                    Classes = entity.Classes,
+                    PersonalTraining = entity.PersonalTraining,
+                    AdditionalInfo = entity.AdditionalInfo,
                     Reviews = entity.Reviews,
                     CityId = entity.CityId
                 };
@@ -81,12 +99,18 @@ namespace GymSite.Services
                 var entity = ctx.Gyms.Single(e => e.GymId == model.GymId);
 
                 entity.Name = model.Name;
-                entity.MembershipPrice = model.MembershipPrice;
+                entity.MonthlyCost = model.MonthlyCost;
+                entity.Hours = model.Hours;
                 entity.Description = model.Description;
                 entity.Address = model.Address;
                 entity.Phone = model.Phone;
                 entity.Website = model.Website;
                 entity.Size = model.Size;
+                entity.Equiptment = model.Equiptment;
+                entity.LockerRoom = model.LockerRoom;
+                entity.Classes = model.Classes;
+                entity.PersonalTraining = model.PersonalTraining;
+                entity.AdditionalInfo = model.AdditionalInfo;
 
                 return ctx.SaveChanges() == 1;
             }
