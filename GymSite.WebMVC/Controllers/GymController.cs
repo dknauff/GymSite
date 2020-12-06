@@ -88,12 +88,19 @@ namespace GymSite.WebMVC.Controllers
             var model = new GymEdit
             {
                 GymId = detail.GymId,
-                MembershipPrice = detail.MembershipPrice,
+                Name = detail.Name,
+                MonthlyCost = detail.MonthlyCost,
+                Hours = detail.Hours,
                 Description = detail.Description,
                 Address = detail.Address,
                 Phone = detail.Phone,
                 Website = detail.Website,
-                Size = detail.Size
+                Size = detail.Size,
+                Equiptment = detail.Equiptment,
+                LockerRoom = detail.LockerRoom,
+                Classes = detail.Classes,
+                PersonalTraining = detail.PersonalTraining,
+                AdditionalInfo = detail.AdditionalInfo
             };
 
             return View(model);

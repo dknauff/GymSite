@@ -12,22 +12,21 @@ namespace GymSite.Data
         [Key]
         public int GymId { get; set; }
         public string Name { get; set; }
-        public decimal MembershipPrice { get; set; }
+        public string MonthlyCost { get; set; }
+        public string Hours { get; set; }
         public string Description { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
         public string Website { get; set; }
         public string Size { get; set; }
+        public string Equiptment { get; set; }
+        public string LockerRoom { get; set; }
+        public string Classes { get; set; }
+        public string PersonalTraining { get; set; }
+        public string AdditionalInfo { get; set; }
 
         public int? CityId { get; set; }
         internal City City { get; set; }
-
-        //[Display(Name = "Multiple Locations")]
-        //public bool HasMultipleLocations { get; set; }
-        //[Display(Name = "Classes")]
-        //public bool HasClasses { get; set; }
-        //[Display(Name = "Personal Training")]
-        //public bool HasPersonalTraining { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
     }
