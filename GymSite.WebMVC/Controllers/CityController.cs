@@ -1,5 +1,8 @@
-﻿using GymSite.Models.CityModels;
+﻿using GymSite.Data;
+using GymSite.Models.CityModels;
 using GymSite.Services;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +16,13 @@ namespace GymSite.WebMVC.Controllers
         // GET: City
         public ActionResult Index()
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new CityService();
             var model = service.GetCities();
 
@@ -21,6 +31,13 @@ namespace GymSite.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             return View();
         }
 
@@ -43,6 +60,13 @@ namespace GymSite.WebMVC.Controllers
 
         public ActionResult Details(int id)
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new CityService();
             var model = service.GetCityById(id);
 
@@ -51,6 +75,13 @@ namespace GymSite.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new CityService();
             var detail = service.GetCityById(id);
             var model = new CityEdit
@@ -89,6 +120,13 @@ namespace GymSite.WebMVC.Controllers
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new CityService();
             var model = service.GetCityById(id);
 
@@ -107,6 +145,26 @@ namespace GymSite.WebMVC.Controllers
             TempData["SaveResult"] = "The city was deleted.";
 
             return RedirectToAction("Index");
+        }
+
+        public Boolean IsAdminUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                var ctx = new ApplicationDbContext();
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(ctx));
+                var s = userManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "Admin")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

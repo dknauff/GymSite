@@ -16,6 +16,7 @@ namespace GymSite.Services
             {
                 var query = ctx.States.Select(e => new StateListItem
                 {
+                    StateId = e.StateId,
                     Name = e.Name,
                     Abbreviation = e.Abbreviation
                 });
@@ -28,6 +29,7 @@ namespace GymSite.Services
         {
             var entity = new State()
             {
+                StateId = model.StateId,
                 Name = model.Name,
                 Abbreviation = model.Abbreviation
             };
@@ -48,7 +50,8 @@ namespace GymSite.Services
                 {
                     StateId = entity.StateId,
                     Name = entity.Name,
-                    Abbreviation = entity.Abbreviation
+                    Abbreviation = entity.Abbreviation,
+                    Cities = entity.Cities
                 };
             }
         }

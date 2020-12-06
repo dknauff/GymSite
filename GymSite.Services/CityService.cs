@@ -17,7 +17,8 @@ namespace GymSite.Services
                 var query = ctx.Cities.Select(e => new CityListItem
                 {
                     CityId = e.CityId,
-                    Name = e.Name
+                    Name = e.Name,
+                    StateId = e.StateId
                 });
 
                 return query.ToArray();
@@ -28,7 +29,8 @@ namespace GymSite.Services
         {
             var entity = new City()
             {
-                Name = model.Name
+                Name = model.Name,
+                StateId = model.StateId
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -46,7 +48,9 @@ namespace GymSite.Services
                 return new CityDetail
                 {
                     CityId = entity.CityId,
-                    Name = entity.Name
+                    Name = entity.Name,
+                    StateId = entity.StateId,
+                    Gyms = entity.Gyms
                 };
             }
         }

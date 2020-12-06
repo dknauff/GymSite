@@ -4,60 +4,95 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    a {
+        color: #5cb85c;
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviewId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GymId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Stars)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th></th>
-    </tr>
+        a:hover {
+            color: #5cb85c;
+        }
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.ReviewId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.OwnerId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.GymId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Stars)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Title)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Text)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.ReviewId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.ReviewId })
-    </td>
-</tr>
+    .buttonfix a {
+        color: whitesmoke;
+    }
+
+    th {
+        color: whitesmoke;
+    }
+
+    tr {
+        color: whitesmoke;
+    }
+
+    td {
+        color: whitesmoke;
+    }
+</style>
+
+@if (ViewBag.DisplayMenu == "Yes")
+{
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GymId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stars)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReviewId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OwnerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GymId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stars)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ReviewId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ReviewId })
+                </td>
+            </tr>
+        }
+
+    </table>
+
 }
-
-</table>
+else
+{
+    <h2>Huh, you must just be confused!  Let's head @Html.ActionLink("home", "Index", "Home").</h2>
+}

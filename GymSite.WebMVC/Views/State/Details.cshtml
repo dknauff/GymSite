@@ -4,39 +4,89 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    a {
+        color: #5cb85c;
+    }
 
-<div>
-    <h4>StateDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
+        a:hover {
+            color: #5cb85c;
+        }
+
+    .buttonfix a {
+        color: whitesmoke;
+    }
+
+    th {
+        color: whitesmoke;
+    }
+
+    tr {
+        color: whitesmoke;
+    }
+
+    td {
+        color: whitesmoke;
+    }
+</style>
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <!--<div class="col-6">-->
+        @*<dt>
             @Html.DisplayNameFor(model => model.StateId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.StateId)
-        </dd>
-
+        </dd>*@
+        <!--<dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @*@Html.DisplayNameFor(model => model.Name)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
+            @*@Html.DisplayFor(model => model.Name)*@
+        </dd>-->
+        @*<dt>
             @Html.DisplayNameFor(model => model.Abbreviation)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Abbreviation)
-        </dd>
+        </dd>*@
+        <!--</dl>
+    </div>-->
 
-    </dl>
+        <div class="col-6">
+
+            @*<h4>@Html.DisplayNameFor(model => model.Cities)</h4>*@
+
+            @foreach (var city in Model.Cities)
+            {
+                <dl class="dl-horizontal">
+                    <dd>
+                        <h4>@Html.DisplayFor(model => city.Name)</h4>
+                        @Html.ActionLink("Learn More", "Details", "City", new { id = city.CityId }, null)
+
+                    </dd>
+
+                </dl>
+            }
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StateId }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+</p>*@
+
+<button onclick="goBack()" class="btn btn-success">Back to States</button>
+
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>

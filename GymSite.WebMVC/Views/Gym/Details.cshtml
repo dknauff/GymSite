@@ -3,96 +3,155 @@
 @{
     ViewBag.Title = "Details";
 }
+
 <style>
-    h2 {
-        background-color: aqua;
+    a {
+        color: #5cb85c;
+    }
+
+        a:hover {
+            color: #5cb85c;
+        }
+
+    .buttonfix a {
+        color: whitesmoke;
+    }
+
+    th {
+        color: whitesmoke;
+    }
+
+    tr {
+        color: whitesmoke;
+    }
+
+    td {
+        color: whitesmoke;
     }
 </style>
 
 <h2>Details</h2>
 
-<div>
-    <h4>GymDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.GymId)
-        </dt>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h4>@Html.DisplayFor(model => model.Name)</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.GymId)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.GymId)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.GymId)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MembershipPrice)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.MembershipPrice)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MembershipPrice)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.MembershipPrice)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Website)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Website)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Size)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Size)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Size)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Size)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Reviews)
-        </dt>
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.CityId)
+                </dt>
 
-        <dd>
+                <dd>
+                    @Html.DisplayFor(model => model.CityId)
+                </dd>*@
+            </dl>
+        </div>
+
+        <div class="col-6">
+            <h4>@Html.DisplayNameFor(model => model.Reviews)</h4>
+            <hr />
+            @Html.ActionLink("Add a Review!", "Create", "Review")
+            <hr />
+
             @foreach (var review in Model.Reviews)
             {
-                @Html.DisplayFor(model => review)
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => review.Stars)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => review.Stars)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => review.Title)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => review.Title)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => review.Text)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => review.Text)
+                    </dd>
+                </dl>
             }
-        </dd>
-
-    </dl>
-</div>
+        </div>
+        </div>
+    </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.GymId  }) |
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Edit", "Edit", new {  id = Model.GymId  }) |
+    @Html.ActionLink("Back to List", "Index")*@
+    <button onclick="goBack()" class="btn btn-success">Back to Gyms</button>
 </p>
+
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>

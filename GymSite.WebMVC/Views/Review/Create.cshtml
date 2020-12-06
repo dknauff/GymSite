@@ -4,7 +4,33 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<style>
+    a {
+        color: #5cb85c;
+    }
+
+        a:hover {
+            color: #5cb85c;
+        }
+
+    .buttonfix a {
+        color: whitesmoke;
+    }
+
+    th {
+        color: whitesmoke;
+    }
+
+    tr {
+        color: whitesmoke;
+    }
+
+    td {
+        color: whitesmoke;
+    }
+</style>
+
+<h2>Review Form</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +38,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>ReviewCreate</h4>
+
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -49,7 +75,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Create" class="btn btn-success" />
         </div>
     </div>
 </div>

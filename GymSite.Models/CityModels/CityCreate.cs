@@ -9,5 +9,7 @@ namespace GymSite.Models.CityModels
     public class CityCreate
     {
         public string Name { get; set; }
+
+        public int? StateId { get; set; }
     }
 }

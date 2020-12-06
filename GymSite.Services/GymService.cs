@@ -24,7 +24,8 @@ namespace GymSite.Services
                         Address = e.Address,
                         Phone = e.Phone,
                         Website = e.Website,
-                        Size = e.Size
+                        Size = e.Size,
+                        CityId = e.CityId
                     });
 
                 return query.ToArray();
@@ -41,7 +42,8 @@ namespace GymSite.Services
                 Address = model.Address,
                 Phone = model.Phone,
                 Website = model.Website,
-                Size = model.Size
+                Size = model.Size,
+                CityId = model.CityId
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -66,7 +68,8 @@ namespace GymSite.Services
                     Phone = entity.Phone,
                     Website = entity.Website,
                     Size = entity.Size,
-                    Reviews = entity.Reviews
+                    Reviews = entity.Reviews,
+                    CityId = entity.CityId
                 };
             }
         }

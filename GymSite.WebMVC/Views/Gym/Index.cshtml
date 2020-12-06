@@ -4,78 +4,121 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    a {
+        color: #5cb85c;
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+        a:hover {
+            color: #5cb85c;
+        }
 
-@if (TempData.ContainsKey("SaveResult"))
-{
-<div class="alert alert-success" role="alert">
+    .buttonfix a {
+        color: whitesmoke;
+    }
 
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>
-}
+    th {
+        color: whitesmoke;
+    }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MembershipPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Website)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size)
-        </th>
-        <th></th>
-    </tr>
+    tr {
+        color: whitesmoke;
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MembershipPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Website)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Size)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GymId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GymId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.GymId })
-        </td>
-    </tr>
-}
+    td {
+        color: whitesmoke;
+    }
+</style>
 
-</table>
+<body style="background-color: #121212">
+
+    @if (ViewBag.DisplayMenu == "Yes")
+    {
+        <h2>Gym Database</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+
+        if (TempData.ContainsKey("SaveResult"))
+        {
+            <div class="alert alert-success" role="alert">
+
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+                @TempData["SaveResult"]
+            </div>
+        }
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MembershipPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Website)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Size)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MembershipPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Website)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+
+                    <td>
+                        <p>@Html.ActionLink("Details", "Details", new { id = item.GymId })</p>
+                        @if (ViewBag.DisplayMenu == "Yes")
+                        {
+                            <p>@Html.ActionLink("Edit", "Edit", new { id = item.GymId })</p>
+                            <p>@Html.ActionLink("Delete", "Delete", new { id = item.GymId })</p>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        <h2>Huh, you must just be confused!  Let's head @Html.ActionLink("home", "Index", "Home").</h2>
+    }
+
+</body>

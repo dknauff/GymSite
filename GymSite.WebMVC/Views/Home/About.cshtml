@@ -1,7 +1,26 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<style>
+    a {
+        color: #5cb85c;
+    }
+
+        a:hover {
+            color: #5cb85c;
+        }
+
+    .buttonfix a {
+        color: whitesmoke
+    }
+</style>
+
+<h2 class="text-center">GymSite</h2>
+<hr />
+<p  class="text-center">GymSite is your tool to find the right gym for you!  Whether you are a first time gym goer or a seasoned veteran looking for new equipment to try out, GymSite will help you save time in your search so you can get going on your goals.  No more uninformative websites, no more driving to gyms to just be disappointed in your options, just a quick search and you'll know exactly what a gym has to offer.</p>
+<div class="buttonfix">
+    <div class="text-center">
+        <button type="button" class="btn btn-success btn-lg" style="text-align: center">@Html.ActionLink("Home", "Index", "Home")</button>
+    </div>
+</div>

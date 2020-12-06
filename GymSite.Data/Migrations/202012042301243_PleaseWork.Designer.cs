@@ -7,13 +7,13 @@ namespace GymSite.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ReviewICollection : IMigrationMetadata
+    public sealed partial class PleaseWork : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ReviewICollection));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PleaseWork));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011231854290_ReviewICollection"; }
+            get { return "202012042301243_PleaseWork"; }
         }
         
         string IMigrationMetadata.Source
