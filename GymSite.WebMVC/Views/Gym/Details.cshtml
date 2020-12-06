@@ -99,7 +99,7 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.Website)
+                    <a href="http://@Model.Website" target="_blank">@Html.DisplayFor(model => model.Website)</a>
                 </dd>
 
                 <dt>
@@ -111,11 +111,11 @@
                 </dd>
 
                 <dt>
-                    @Html.DisplayNameFor(model => model.Equiptment)
+                    @Html.DisplayNameFor(model => model.Equipment)
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => model.Equiptment)
+                    @Html.DisplayFor(model => model.Equipment)
                 </dd>
 
                 <dt>

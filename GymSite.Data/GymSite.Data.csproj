@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202012060517115_UpdatedGym.designer.cs">
       <DependentUpon>202012060517115_UpdatedGym.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012062139048_Equipment.cs" />
+    <Compile Include="Migrations\202012062139048_Equipment.designer.cs">
+      <DependentUpon>202012062139048_Equipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
@@ -83,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012060517115_UpdatedGym.resx">
       <DependentUpon>202012060517115_UpdatedGym.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012062139048_Equipment.resx">
+      <DependentUpon>202012062139048_Equipment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,7 +21,7 @@ namespace GymSite.Services
                     StateId = e.StateId
                 });
 
-                return query.ToArray();
+                return query.ToArray().OrderBy(o => o.Name).ToArray();
             }
         }
 

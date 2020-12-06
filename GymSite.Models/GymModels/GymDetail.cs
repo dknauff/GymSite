@@ -20,7 +20,7 @@ namespace GymSite.Models.GymModels
         public string Phone { get; set; }
         public string Website { get; set; }
         public string Size { get; set; }
-        public string Equiptment { get; set; }
+        public string Equipment { get; set; }
         [Display(Name = "Locker Room Information")]
         public string LockerRoom { get; set; }
         [Display(Name = "Class Information")]

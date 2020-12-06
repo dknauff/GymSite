@@ -94,7 +94,7 @@
                         @Html.DisplayFor(modelItem => item.Phone)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Website)
+                        <a href="http://@item.Website" target="_blank">@Html.DisplayFor(modelItem => item.Website)</a>
                     </td>
 
                     <td>

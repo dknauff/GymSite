@@ -21,7 +21,7 @@ namespace GymSite.Services
                     Abbreviation = e.Abbreviation
                 });
 
-                return query.ToArray();
+                return query.ToArray().OrderBy(o => o.Name).ToArray();
             }
         }
 
