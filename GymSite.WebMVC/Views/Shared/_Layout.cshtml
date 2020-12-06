@@ -9,18 +9,14 @@
 
 </head>
 
-
-<body>
-    <div class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+<body style="background-color: #212121; color: whitesmoke">
+    <div class="navbar navbar-expand-sm">
+        <div class="container rounded" style="background-color: #343a40;">
             <div class="navbar-brand">
-                @Html.ActionLink("Gymsite", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Gymsite", "Index", "Home")
             </div>
             <div class="collapse navbar-collapse">
-                <ul class="navbar-nav nav-fill w-100">
-                    @*<li class="nav-item active">@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    @*<li class="nav-item active">@Html.ActionLink("Gyms", "Index", "Gym")</li>*@
-                    <li class="nav-item active">@Html.ActionLink("About", "About", "Home")</li>
+                <ul class="navbar-nav ml-auto">
                     <li>@Html.Partial("_LoginPartial")</li>
                 </ul>
             </div>
@@ -32,18 +28,12 @@
             <div class="col-12">
             @RenderBody()
             <hr />
-            <footer>
-                <p id="footer">&copy; @DateTime.Now.Year - GymSite</p>
+            <footer style="position: fixed; left: 0; bottom: 0; width: 100%; text-align: center; background-color: #343a40;" class="rounded">
+                <p style="text-align: center;">&copy; @DateTime.Now.Year - @Html.ActionLink("GymSite", "About", "Home")</p>
             </footer>
             </div>
             </div>
     </div>
-
-    <style>
-        #footer{
-            text-align: center;
-        }
-    </style>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

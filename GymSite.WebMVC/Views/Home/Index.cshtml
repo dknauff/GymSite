@@ -1,11 +1,31 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+
 <style>
-    
+    a {
+        color: #5cb85c;
+    }
+
+    a:hover {
+        color: #5cb85c;
+    }
+
+    .buttonfix a {
+        color: whitesmoke
+    }
+
 </style>
-<div class="jumbotron">
-    <h1>GymSite</h1>
-    <p class="lead">GymSite last first step you'll need to take in your journey to finding the right gym for you!</p>
-    <p class="btn btn-light">@Html.ActionLink("Let's go!", "Index", "State")</p>
-</div>
+
+    <div class="jumbotron" style="background-color: transparent !important; margin: auto;">
+        <br />
+        <h1 class="text-center">GymSite</h1>
+        <hr />
+        <p class="lead text-center">GymSite, the last first step you'll need to take in your journey to finding the right gym for you!</p>
+        <br />
+        <div class="buttonfix">
+            <div class="text-center">
+                <button type="button" class="btn btn-success btn-lg" style="text-align: center">@Html.ActionLink("Let's go!", "Index", "State")</button>
+            </div>
+        </div>
+    </div>

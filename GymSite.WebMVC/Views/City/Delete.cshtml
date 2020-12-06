@@ -4,37 +4,44 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+@if (ViewBag.DisplayMenu == "Yes")
+{
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>CityDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CityId)
-        </dt>
+    <h3>Uh.. what happened?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CityId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CityId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CityId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-success" /> |
+                @Html.ActionLink("Back to Cities", "Index")
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h2>Huh, you must just be confused!  Let's head @Html.ActionLink("home", "Index", "Home").</h2>
+}

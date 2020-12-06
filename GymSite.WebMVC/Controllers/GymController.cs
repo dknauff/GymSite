@@ -32,6 +32,13 @@ namespace GymSite.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             return View();
         }
 
@@ -54,6 +61,13 @@ namespace GymSite.WebMVC.Controllers
 
         public ActionResult Details(int id)
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new GymService();
             var model = service.GetGymById(id);
 
@@ -62,6 +76,13 @@ namespace GymSite.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new GymService();
             var detail = service.GetGymById(id);
             var model = new GymEdit
@@ -105,6 +126,13 @@ namespace GymSite.WebMVC.Controllers
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
+            ViewBag.DisplayMenu = "No";
+
+            if (IsAdminUser())
+            {
+                ViewBag.DisplayMenu = "Yes";
+            }
+
             var service = new GymService();
             var model = service.GetGymById(id);
 

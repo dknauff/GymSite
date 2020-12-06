@@ -4,43 +4,63 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<style>
+    th{
+        color: whitesmoke;
+    }
+    tr {
+        color: whitesmoke;
+    }
+    td {
+        color: whitesmoke;
+    }
+</style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CityId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StateId)
-        </th>
-        <th>
-        </th>
-    </tr>
+@if (ViewBag.DisplayMenu == "Yes")
+{
+    <h2>Index</h2>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.CityId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.StateId)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.CityId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.CityId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.CityId })
-    </td>
-</tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateId)
+            </th>
+            <th>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StateId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CityId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CityId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CityId })
+                </td>
+            </tr>
+        }
+
+    </table>
 }
-
-</table>
+else
+{
+    <h2>Huh, you must just be confused!  Let's head @Html.ActionLink("home", "Index", "Home").</h2>
+}

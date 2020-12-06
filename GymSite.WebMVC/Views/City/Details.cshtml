@@ -4,57 +4,90 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    a {
+        color: #5cb85c;
+    }
 
+        a:hover {
+            color: #5cb85c;
+        }
+
+    .buttonfix a {
+        color: whitesmoke;
+    }
+
+    th {
+        color: whitesmoke;
+    }
+
+    tr {
+        color: whitesmoke;
+    }
+
+    td {
+        color: whitesmoke;
+    }
+</style>
+
+<h2>Gyms in @Html.DisplayFor(model => model.Name)</h2>
+<hr />
 
 <div class="container">
-    <div class="row">
+    <!--<div class="row">
         <div class="col-6">
 
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.CityId)
-                </dt>
+            <dl class="dl-horizontal">-->
+    @*<dh>
+            @Html.DisplayNameFor(model => model.CityId)
+        </dh>
 
-                <dd>
-                    @Html.DisplayFor(model => model.CityId)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.CityId)
+        </dd>*@
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Name)
-                </dt>
+    @*<dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Name)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>*@
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.StateId)
-                </dt>
+    @*<dt>
+            @Html.DisplayNameFor(model => model.StateId)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.StateId)
-                </dd>
-            </dl>
-        </div>
+        <dd>
+            @Html.DisplayFor(model => model.StateId)
+        </dd>*@
+    <!--</dl>
+    </div>-->
 
-    <div class="col-6">
+    <div class="col-12">
 
-        <h4>@Html.DisplayNameFor(model => model.Gyms)</h4>
+        @*<h4>@Html.DisplayNameFor(model => model.Gyms)</h4>*@
 
         @foreach (var gym in Model.Gyms)
         {
-    <dl class="dl-horizontal">
-        <dd>
-            @Html.DisplayFor(model => gym.Name)
-            @Html.ActionLink("Gym Info", "Details", "Gym", new { id = gym.GymId }, null )
-        </dd>
-    </dl>
+            <dl class="dl-horizontal">
+                <dd>
+                    <h4>@Html.DisplayFor(model => gym.Name) | @Html.DisplayFor(model => gym.Address)</h4>
+                    @Html.ActionLink("Learn More", "Details", "Gym", new { id = gym.GymId }, null)
+                </dd>
+            </dl>
+            <hr />
         }
-        </div>
-        </div>
     </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.CityId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new {  id = Model.CityId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+<button onclick="goBack()" class="btn btn-success">Back to Cities</button>
+
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>
