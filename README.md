@@ -9,7 +9,7 @@ To Run Locally:
 1) Clone GymSite and build the solution in Visual Studio
 1a) If you receive a roslyn error, try the ‘show all files’ fix in the solution explorer where you show all files a few times then reopen Visual Studio.  Otherwise, go to your package manager console and enter the following line: Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
 2) Go to Package Manager Console and type Enable-Migrations, then Add-Migration Initial
-3) Run the application and create an account!  Create an account to experience what a regular user would.  Login with Danny and adminpass to experience what the admin could do.
+3) Run the application and create an account!  Create an account to experience what a regular user would.  Login with Danny and adminpass to experience what the admin can do.
 
 I encourage that you login as the admin and seed data to experience how the app is meant to be.  You will need to create a state, a city tied to a state, then create gyms tied to a city.
 
