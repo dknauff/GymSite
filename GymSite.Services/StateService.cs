@@ -56,20 +56,6 @@ namespace GymSite.Services
             }
         }
 
-        //public StateDetail GetStateByAbbreviation(string abbreviation)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var entity = ctx.States.Single(e => e.Name == abbreviation);
-        //        return new StateDetail
-        //        {
-        //            StateId = entity.StateId,
-        //            Name = entity.Name,
-        //            Abbreviation = entity.Abbreviation
-        //        };
-        //    }
-        //}
-
         public bool UpdateState(StateEdit model)
         {
             using (var ctx = new ApplicationDbContext())

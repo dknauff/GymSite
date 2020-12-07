@@ -50,7 +50,7 @@ namespace GymSite.WebMVC.Controllers
             var service = new CityService();
             if (service.CreateCity(model))
             {
-                TempData["SaveResult"] = "State has been sucessfully added!";
+                TempData["SaveResult"] = "City has been sucessfully added!";
                 return RedirectToAction("Index");
             }
 

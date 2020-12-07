@@ -87,6 +87,7 @@ namespace GymSite.Services
                     PersonalTraining = entity.PersonalTraining,
                     AdditionalInfo = entity.AdditionalInfo,
                     Reviews = entity.Reviews,
+                    Ratings = entity.Ratings,
                     CityId = entity.CityId
                 };
             }

@@ -33,5 +33,20 @@ namespace GymSite.Models.GymModels
         public int? CityId { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+
+        public double OverallRating
+        {
+            get
+            {
+                if (Ratings.Count > 0)
+                {
+                    return (Ratings.Average(x => x.Rank));
+                }
+
+                return (5);
+            }
+        }
+
     }
 }
