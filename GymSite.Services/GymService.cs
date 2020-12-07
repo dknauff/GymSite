@@ -26,7 +26,7 @@ namespace GymSite.Services
                         Phone = e.Phone,
                         Website = e.Website,
                         Size = e.Size,
-                        Equiptment = e.Equiptment,
+                        Equipment = e.Equipment,
                         LockerRoom = e.LockerRoom,
                         Classes = e.Classes,
                         PersonalTraining = e.PersonalTraining,
@@ -34,7 +34,7 @@ namespace GymSite.Services
                         CityId = e.CityId
                     });
 
-                return query.ToArray();
+                return query.ToArray().OrderBy(o => o.Name).ToArray();
             }
         }
 
@@ -50,7 +50,7 @@ namespace GymSite.Services
                 Phone = model.Phone,
                 Website = model.Website,
                 Size = model.Size,
-                Equiptment = model.Equiptment,
+                Equipment = model.Equipment,
                 LockerRoom = model.LockerRoom,
                 Classes = model.Classes,
                 PersonalTraining = model.PersonalTraining,
@@ -81,12 +81,13 @@ namespace GymSite.Services
                     Phone = entity.Phone,
                     Website = entity.Website,
                     Size = entity.Size,
-                    Equiptment = entity.Equiptment,
+                    Equipment = entity.Equipment,
                     LockerRoom = entity.LockerRoom,
                     Classes = entity.Classes,
                     PersonalTraining = entity.PersonalTraining,
                     AdditionalInfo = entity.AdditionalInfo,
                     Reviews = entity.Reviews,
+                    Ratings = entity.Ratings,
                     CityId = entity.CityId
                 };
             }
@@ -106,7 +107,7 @@ namespace GymSite.Services
                 entity.Phone = model.Phone;
                 entity.Website = model.Website;
                 entity.Size = model.Size;
-                entity.Equiptment = model.Equiptment;
+                entity.Equipment = model.Equipment;
                 entity.LockerRoom = model.LockerRoom;
                 entity.Classes = model.Classes;
                 entity.PersonalTraining = model.PersonalTraining;

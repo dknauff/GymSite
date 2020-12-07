@@ -49,7 +49,7 @@ namespace GymSite.WebMVC
                 roleManager.Create(role);
             }
 
-            if (!roleManager.RoleExists("Employee"))
+            if (!roleManager.RoleExists("Gym-Seeker"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "User";

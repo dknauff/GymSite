@@ -34,6 +34,7 @@ namespace GymSite.Data
 
         public DbSet<City> Cities { get; set; }
         public DbSet<Gym> Gyms { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<State> States { get; set; }
 
@@ -49,6 +50,8 @@ namespace GymSite.Data
                 .Add(new IdentityUserRoleConfiguration());
 
             modelBuilder.Entity<Review>().HasRequired(r => r.Gym).WithMany(g => g.Reviews).HasForeignKey<int>(r => r.GymId);
+
+            modelBuilder.Entity<Rating>().HasRequired(r => r.Gym).WithMany(g => g.Ratings).HasForeignKey<int>(r => r.GymId);
 
             modelBuilder.Entity<City>().HasRequired(c => c.State).WithMany(s => s.Cities).HasForeignKey<int?>(c => c.StateId);
 

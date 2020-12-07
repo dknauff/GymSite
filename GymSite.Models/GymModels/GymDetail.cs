@@ -20,7 +20,7 @@ namespace GymSite.Models.GymModels
         public string Phone { get; set; }
         public string Website { get; set; }
         public string Size { get; set; }
-        public string Equiptment { get; set; }
+        public string Equipment { get; set; }
         [Display(Name = "Locker Room Information")]
         public string LockerRoom { get; set; }
         [Display(Name = "Class Information")]
@@ -33,5 +33,20 @@ namespace GymSite.Models.GymModels
         public int? CityId { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+
+        public double OverallRating
+        {
+            get
+            {
+                if (Ratings.Count > 0)
+                {
+                    return (Ratings.Average(x => x.Rank));
+                }
+
+                return (5);
+            }
+        }
+
     }
 }

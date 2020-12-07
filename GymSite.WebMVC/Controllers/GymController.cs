@@ -96,7 +96,7 @@ namespace GymSite.WebMVC.Controllers
                 Phone = detail.Phone,
                 Website = detail.Website,
                 Size = detail.Size,
-                Equiptment = detail.Equiptment,
+                Equipment = detail.Equipment,
                 LockerRoom = detail.LockerRoom,
                 Classes = detail.Classes,
                 PersonalTraining = detail.PersonalTraining,

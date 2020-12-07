@@ -19,7 +19,7 @@ namespace GymSite.Data
         public string Phone { get; set; }
         public string Website { get; set; }
         public string Size { get; set; }
-        public string Equiptment { get; set; }
+        public string Equipment { get; set; }
         public string LockerRoom { get; set; }
         public string Classes { get; set; }
         public string PersonalTraining { get; set; }
@@ -29,5 +29,19 @@ namespace GymSite.Data
         internal City City { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+
+        public double OverallRating
+        {
+            get
+            {
+                if (Ratings.Count > 0)
+                {
+                    return (Ratings.Average(x => x.Rank));
+                }
+
+                return (5);
+            }
+        }
     }
 }

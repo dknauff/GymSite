@@ -58,10 +58,10 @@
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MonthlyCost)
+                    @Html.DisplayNameFor(model => model.GymId)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Description)
+                    @Html.DisplayNameFor(model => model.MonthlyCost)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Address)
@@ -82,10 +82,10 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MonthlyCost)
+                        @Html.DisplayFor(modelItem => item.GymId)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Description)
+                        @Html.DisplayFor(modelItem => item.MonthlyCost)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Address)
@@ -94,7 +94,7 @@
                         @Html.DisplayFor(modelItem => item.Phone)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Website)
+                        <a href="http://@item.Website" target="_blank">Website</a>
                     </td>
 
                     <td>

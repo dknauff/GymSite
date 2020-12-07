@@ -34,35 +34,8 @@
 <hr />
 <div class="container">
     <div class="row">
-        <!--<div class="col-6">-->
-        @*<dt>
-            @Html.DisplayNameFor(model => model.StateId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StateId)
-        </dd>*@
-        <!--<dl class="dl-horizontal">
-        <dt>
-            @*@Html.DisplayNameFor(model => model.Name)*@
-        </dt>
-
-        <dd>
-            @*@Html.DisplayFor(model => model.Name)*@
-        </dd>-->
-        @*<dt>
-            @Html.DisplayNameFor(model => model.Abbreviation)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Abbreviation)
-        </dd>*@
-        <!--</dl>
-    </div>-->
 
         <div class="col-6">
-
-            @*<h4>@Html.DisplayNameFor(model => model.Cities)</h4>*@
 
             @foreach (var city in Model.Cities)
             {
@@ -76,12 +49,12 @@
                 </dl>
             }
         </div>
+
+        <div class="col-6">
+            <img src="~/Images/Local.png" class="img-fluid" />
+        </div>
     </div>
 </div>
-@*<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StateId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>*@
 
 <button onclick="goBack()" class="btn btn-success">Back to States</button>
 
